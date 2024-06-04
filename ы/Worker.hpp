@@ -5,16 +5,16 @@
 class Worker
 {
 public:
+	void InputInfo();
+	void PrintInfo();
+	
+private:
+
 	std::string name;
 
 	int stag;
 	int hourCash;
 	int hours;
-
-	void InputInfo();
-	void PrintInfo();
-	
-private:
 	int Salary();
 	int SalaryWithPrem();
 
