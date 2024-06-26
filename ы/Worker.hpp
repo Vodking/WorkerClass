@@ -7,6 +7,7 @@ class Worker
 public:
 	void InputInfo();
 	void PrintInfo();
+	void SaveInfo();
 	
 private:
 

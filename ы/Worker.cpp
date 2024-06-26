@@ -1,5 +1,7 @@
 
 #include "Worker.hpp"
+std::string fileName = "WorkersData.txt";
+std::ofstream fileIn;
 
 void Worker::InputInfo()
 {
@@ -30,6 +32,23 @@ void Worker::PrintInfo()
 		std::cerr << "Error:No Data";
 	}
 	
+}
+
+void Worker::SaveInfo()
+{
+	if (stag > 0 || stag <= 0)
+	{
+		fileIn.open(fileName, std::ofstream::app);
+		if (!fileIn.is_open())
+		{
+			std::cerr << "Error";
+		}
+		else
+		{
+			fileIn << name << '\n' << stag << '\n' << hourCash << '\n' << hours << '\n' << Salary() << '\n' << SalaryWithPrem() << '\n';
+		}
+		fileIn.close();
+	}
 }
 
 int Worker::Salary()
